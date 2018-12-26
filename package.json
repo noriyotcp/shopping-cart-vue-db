@@ -4,6 +4,9 @@
   "description": "JSON server for shopping-cart-vue",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "json-server": "<=0.14.0"
   }

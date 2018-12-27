@@ -5,9 +5,9 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "json-server --watch db.json"
+    "start": "node server-local.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "json-server": "^0.14.2"
   }
 }

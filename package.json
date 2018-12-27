@@ -1,13 +1,16 @@
 {
   "name": "shopping-cart-vue-db",
   "version": "1.0.0",
-  "description": "JSON server for shopping-cart-vue",
-  "main": "server.js",
+  "description": "JSON server for shopping-cart-vue via Netlify Lambda Functions",
+  "main": "functions/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server-local.js"
+    "start": "node server-local.js",
+    "build": "netlify-lambda build express"
   },
   "devDependencies": {
-    "json-server": "^0.14.2"
+    "json-server": "^0.14.2",
+    "netlify-lambda": "^1.1.1",
+    "serverless-http": "^1.8.0"
   }
 }

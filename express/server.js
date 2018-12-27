@@ -3,6 +3,7 @@ const server = jsonServer.create()
 const path = require('path')
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
+const serverless = require('serverless-http')
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
@@ -33,7 +34,10 @@ server.use((req, res, next) => {
   next()
 })
 
-// Use default router
+// Use default router (local)
 server.use(router)
+// Path must route to lambda
+server.use('/.netlify/functions/server', router)
 
 module.exports = server
+module.exports.handler = serverless(server)

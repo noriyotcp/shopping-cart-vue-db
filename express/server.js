@@ -1,14 +1,10 @@
 const express = require('express')
 const jsonServer = require('json-server')
-const middlewares = jsonServer.defaults()
 const path = require('path')
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const serverless = require('serverless-http')
 
 const app = express()
-
-// Set default middlewares (logger, static, cors and no-cache)
-app.use(middlewares)
 
 // Add custom routes before JSON Server router
 
